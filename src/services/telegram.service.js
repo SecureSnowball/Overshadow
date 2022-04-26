@@ -6,7 +6,7 @@ class TelegramService {
     const baseUrl = `https://api.telegram.org/bot${telegramBotToken}`;
 
     // Create an HTTP client to use for all communication with TG.
-    this.client = axios({
+    this.client = axios.create({
       baseUrl,
     });
   }
