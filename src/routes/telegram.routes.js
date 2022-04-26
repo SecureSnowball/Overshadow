@@ -3,6 +3,6 @@ const telegramController = require('../controllers/telegram.controller');
 
 const router = express.Router();
 
-router.get('/webhook', telegramController.webhookHandler);
+router.post('/webhook', telegramController.webhookHandler);
 
 module.exports = router;
