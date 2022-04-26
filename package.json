@@ -1,0 +1,47 @@
+{
+  "name": "overshadow",
+  "version": "1.0.0",
+  "description": "A Telegram bot that saves content to Google Drive and Google sheets",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node index.js | pino-pretty",
+    "format": "eslint --fix src index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SecureSnowball/Overshadow.git"
+  },
+  "keywords": [
+    "tg",
+    "google",
+    "drive",
+    "google",
+    "sheets",
+    "backup",
+    "telegram",
+    "bot"
+  ],
+  "author": "Ravindra",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/SecureSnowball/Overshadow/issues"
+  },
+  "homepage": "https://github.com/SecureSnowball/Overshadow#readme",
+  "dependencies": {
+    "axios": "^0.27.1",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.1",
+    "pino": "^7.11.0",
+    "uuid": "^8.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.14.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "pino-pretty": "^7.6.1"
+  }
+}
