@@ -19,7 +19,7 @@ jobs:
           ssh-keyscan -p $PORT $HOST >> ~/.ssh/known_hosts
           chmod 644 ~/.ssh/known_hosts
           rsync -az -e "ssh -p $PORT" ./ $USER@$HOST:$PROJECT_PATH
-          ssh $USER@$HOST -p $PORT 'cd $PROJECT_PATH && npm ci --ignore-scripts && pm2 restart Overshadow -a'
+          ssh $USER@$HOST -p $PORT "cd $PROJECT_PATH && npm ci --ignore-scripts && pm2 restart Overshadow -a"
         env:
           SSH_KEY: ${{ secrets.SSH_KEY }}
           HOST: ${{ secrets.HOST }}
