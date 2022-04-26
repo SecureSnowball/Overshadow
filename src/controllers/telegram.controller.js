@@ -1,4 +1,5 @@
 const telegramService = require('../services/telegram.service');
+const store = require('../util/store');
 
 class TelegramController {
   constructor() {
@@ -7,6 +8,8 @@ class TelegramController {
 
   async webhookHandler(req, res) {
     try {
+      const { logger } = store.getStore();
+      logger.info(req.body);
       const input = req.body;
       const chatId = input.message.chat_id;
       await this.service.greet(chatId);
