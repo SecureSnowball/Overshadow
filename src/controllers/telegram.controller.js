@@ -9,7 +9,7 @@ class TelegramController {
       const input = req.body;
       const chatId = input.message.chat.id;
       const message = input.message.text;
-      if (message === 'start') {
+      if (message === '/start') {
         await telegramService.greet(chatId);
       }
       return res.json({ message: 'Accepted' });
