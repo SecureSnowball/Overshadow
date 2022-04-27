@@ -12,7 +12,7 @@ class TelegramController {
       return res.json({ message: 'Accepted' });
     } catch (e) {
       logger.fatal(e);
-      return res.status(500).json({ message: e.message });
+      return res.status(200).json({ message: `Unsupported type: ${e.message}` });
     }
   }
 }
