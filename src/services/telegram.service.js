@@ -1,4 +1,5 @@
 const axios = require('axios');
+const store = require('../util/store');
 const { appName, telegramBotToken } = require('../config/constants');
 
 class TelegramService {
@@ -11,8 +12,10 @@ class TelegramService {
     });
   }
 
-  greet(chatId) {
-    return this.client.get('/sendMessage', {
+  async greet(chatId) {
+    const { logger } = store.getStore();
+    logger.info(`Sending message to ${chatId}`);
+    return this.client.post('/sendMessage', {
       chat_id: chatId,
       text: `Hello!, I am ${appName}, I can take backup of your data. PS: I am not a mirror bot`,
     });

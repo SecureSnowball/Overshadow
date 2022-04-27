@@ -5,13 +5,13 @@ class TelegramController {
   static async webhookHandler(req, res) {
     const { logger } = store.getStore();
     try {
-      logger.info({ input: req.body });
+      logger.debug({ input: req.body });
       const input = req.body;
-      const chatId = input.message.chat_id;
+      const chatId = input.message.chat.id;
       await telegramService.greet(chatId);
       return res.json({ message: 'Accepted' });
     } catch (e) {
-      logger.fatal(e);
+      logger.debug(e);
       return res.status(200).json({ message: `Unsupported type: ${e.message}` });
     }
   }
