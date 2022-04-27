@@ -5,7 +5,7 @@ class TelegramController {
   static async webhookHandler(req, res) {
     const { logger } = store.getStore();
     try {
-      logger.info(req.body);
+      logger.info({ input: req.body });
       const input = req.body;
       const chatId = input.message.chat_id;
       await telegramService.greet(chatId);
