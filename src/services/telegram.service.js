@@ -3,11 +3,11 @@ const { appName, telegramBotToken } = require('../config/constants');
 
 class TelegramService {
   constructor() {
-    const baseUrl = `https://api.telegram.org/bot${telegramBotToken}`;
+    const baseURL = `https://api.telegram.org/bot${telegramBotToken}`;
 
     // Create an HTTP client to use for all communication with TG.
     this.client = axios.create({
-      baseUrl,
+      baseURL,
     });
   }
 

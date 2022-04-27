@@ -1,8 +1,8 @@
 const express = require('express');
-const telegramController = require('../controllers/telegram.controller');
+const TelegramController = require('../controllers/telegram.controller');
 
 const router = express.Router();
 
-router.post('/webhook', telegramController.webhookHandler);
+router.post('/webhook', TelegramController.webhookHandler);
 
 module.exports = router;
